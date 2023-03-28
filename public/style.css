@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600&display=swap');
+
+*{
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #7f0920;
+    color: #0a0408;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0;
+}
+
+header{
+    background-color: #000000c7;
+}
+#appTitle {
+    text-align: center;
+    margin: 0px auto;
+    display: block;
+    font-family: 'Staatliches', sans-serif;
+    font-size: 80px;
+    color: wheat;
+}
+
+#genreForm, #playBtn {
+    text-align: center;
+    margin: 0px auto;
+    display: block;
+    font-family: 'Fredoka One', sans-serif;
+    background-color: rgb(140 0 0 / 64%);
+    padding: 15px 0;
+}
+
+#movieInfo {
+    width:  65%;
+    margin:  32px auto;
+    background-color: #000000c7;
+}
+
+#movieInfo:after {
+    content:  "";
+    display:  table;
+    clear:  both;
+}
+
+#moviePoster, #movieText {
+    width:  50%;
+    float:  left;
+}
+
+img#moviePoster {
+    width:  100%;
+    height:  auto;
+    display:  block;
+    margin:  auto;
+}
+
+#movieText {
+    font-family: 'Questrial';
+    color: #FEFBEA;
+    line-height: 1.25;
+}
+
+#movieTitle, #movieOverview {
+    padding: 0 32px;
+}
+
+#playBtn {
+    margin-top: 20px;
+    font-size: 25px;
+    padding: 7px 10px;
+    border-radius: 10px;
+    border-style: none;
+    background-color: #B97828;
+    color: #fdc238;
+    cursor:  pointer;
+}
+
+label {
+    display: block;
+    font-size: 35px;
+    margin-bottom: 5px;
+    color: wheat;
+}
+
+select {
+    width: 200px;
+    height: auto;
+}
+
+#likeOrDislikeBtns {
+    text-align: center;
+    margin: 0px auto;  
+    background-color: #000000c7;
+}
+
+#likeBtn, #dislikeBtn {
+    padding: 15px 25px;
+    font-size: 25px;
+    border-radius: 12px;
+    border-style: none;
+    cursor:  pointer;
+}
+
+#likeBtn {
+    background-color: #249e57;
+    color: darkgreen;
+}
+
+#dislikeBtn {
+    background-color: #c74a4a;
+    color: #910000;
+}
+
+/* Abdullah */
+#movieReleaseYear{
+    padding: 0 32px;
+}
+
+#fav-list{
+    color: white;
+    background-color: #000000c7;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+}
+#fav-list h2{
+    width: 100%;
+    border: 2px solid white;
+    padding: 5px 0;
+}
+
+#fav-list article{
+    padding: 15px 0;
+    width: 50%;
+}
+
+#fav-list article img{
+    width: 100%;
+    max-height: 280px;
+    max-width: 200px;
+}
+
+#fav-btn{
+    border: none;
+    background-color: white;
+    font-size: 20px;
+    font-family: 'Open Sans', sans-serif;
+    padding: 3px 10px;
+    font-weight: 500;
+    border-radius: 3px;
+    margin-right: 10px;
+}
+#fav-control{
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    background-color: #000000c7;
+    padding: 10px 0 10px 0;
+}
+#movieRating{
+    padding: 0 32px;
+}
