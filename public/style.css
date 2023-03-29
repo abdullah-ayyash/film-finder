@@ -74,7 +74,7 @@ img#moviePoster {
     border-radius: 10px;
     border-style: none;
     background-color: #B97828;
-    color: #fdc238;
+    color: #FFEB3B;
     cursor:  pointer;
 }
 
@@ -88,6 +88,15 @@ label {
 select {
     width: 200px;
     height: auto;
+    padding: 5px 10px;
+    background-color: #3F51B5;
+    color: whitesmoke;
+    font-size: 16px;
+    border: none;
+}
+
+select:focus{
+    border: none;
 }
 
 #likeOrDislikeBtns {
