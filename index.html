@@ -1,45 +1,91 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Film Finder</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400&family=Fredoka+One&family=Questrial&family=Staatliches&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="public/style.css">
-    <script defer src="https://kit.fontawesome.com/e918d10e90.js" crossorigin="anonymous"></script>
-    <script defer src="public/helpers.js"></script>
-    <script defer src="public/script.js"></script>
-  </head>
-  <body>
-    <header>
-      <h1 id="appTitle">🍿Film Finder🍿</h1>
-    </header>
-    <form id="genreForm">
-      <label>Choose a genre:</label>
-      <select name="genres" id="genres">
-      </select>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Film Finder – Can't pick a film? Let chance decide.</title>
+  <meta name="description" content="Pick a genre and get a random film worth watching. Save favourites to your watchlist.">
+  <meta name="theme-color" content="#0b0909">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Staatliches&display=swap">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="backdrop" id="backdrop" aria-hidden="true"></div>
+  <a class="skip" href="#finder">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap bar">
+      <a class="brand" href="#top"><span class="brand-mark" aria-hidden="true"></span>Film Finder</a>
+      <a class="nav-link" href="#watchlist">Watchlist <span id="count-badge" class="badge">0</span></a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section id="finder" class="hero wrap">
+      <h1>Can't pick a film?<br><em>Let chance decide.</em></h1>
+      <p class="sub">Choose a genre, press the button and get a random film worth watching.</p>
+      <div id="genres" class="chips" role="group" aria-label="Genre"></div>
+      <button id="find" class="btn btn-gold btn-lg" type="button">Find me a film</button>
+      <p id="message" class="message" role="alert" hidden></p>
+      <p id="mode" class="mode" hidden><span id="mode-text"></span> <button id="mode-btn" class="link" type="button"></button></p>
+    </section>
+
+    <section id="result" class="wrap" hidden aria-busy="false" aria-label="Your film">
+      <article class="film panel">
+        <div id="film-poster" class="poster"></div>
+        <div class="film-body">
+          <h2 id="film-title" tabindex="-1"></h2>
+          <p id="film-tagline" class="tagline"></p>
+          <p id="film-meta" class="meta"></p>
+          <ul id="film-tags" class="tags"></ul>
+          <p id="film-overview" class="overview"></p>
+          <div class="actions">
+            <button id="save" class="btn btn-gold" type="button">Save to watchlist</button>
+            <button id="skip" class="btn btn-ghost" type="button">Show me another</button>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section id="watchlist" class="wrap">
+      <div class="wl-head">
+        <h2>Your watchlist <span id="wl-count" class="muted"></span></h2>
+        <button id="wl-clear" class="link" type="button" hidden>Clear all</button>
+      </div>
+      <p id="wl-empty" class="muted">Nothing saved yet. Find a film and save it here.</p>
+      <ul id="wl-list" class="wl-grid"></ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>This product uses the TMDB API but is not endorsed or certified by TMDB.</p>
+    </div>
+  </footer>
+
+  <dialog id="settings" class="panel dialog" aria-labelledby="settings-title">
+    <form id="key-form" method="dialog">
+      <h2 id="settings-title">Use live TMDB data</h2>
+      <p>Paste your free TMDB API key (v3). It is stored only in this browser and sent only to TMDB.
+        Get one at <a href="https://www.themoviedb.org/settings/api" target="_blank" rel="noopener">themoviedb.org/settings/api</a>.</p>
+      <label for="key-input">API key</label>
+      <input id="key-input" type="text" autocomplete="off" spellcheck="false" required>
+      <p id="key-msg" class="message" role="status"></p>
+      <div class="actions">
+        <button class="btn btn-gold" type="submit">Save key</button>
+        <button id="key-remove" class="btn btn-ghost" type="button">Remove key</button>
+        <button id="key-cancel" class="btn btn-ghost" type="button">Cancel</button>
+      </div>
     </form>
-    <button id="playBtn">Let's Play!</button>
-    
-    <div id="movieInfo">
-      <div id="moviePoster"></div>
-      <div id="movieText"></div>
-      
-    </div>
-    <div id="likeOrDislikeBtns" hidden>
-      <button id="likeBtn"><i class="fa-solid fa-thumbs-up"></i></button>
-      <button id="dislikeBtn"><i class="fa-solid fa-thumbs-down"></i></button>
-    </div>
-    <div id="fav-control">
-      <button id="fav-btn" onclick="showFavList()">Add to Favorites</button>
-      <button id="fav-btn" onclick="clearLocalStorage()">Clear Favorites</button>
-    </div>
-    <div id="fav-list">
-      
+  </dialog>
 
-
-    </div>
-
-  </body>
+  <script src="js/config.js"></script>
+  <script src="js/sample-data.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/watchlist.js"></script>
+  <script src="js/app.js"></script>
+</body>
 </html>

@@ -1,0 +1,37 @@
+// Sample films used in demo mode, so the app works with no API key and no network.
+// Ratings and runtimes are approximate. Descriptions are written for this project.
+window.SAMPLE_DATA = {
+  genres: [
+    { id: 28, name: "Action" }, { id: 12, name: "Adventure" }, { id: 16, name: "Animation" },
+    { id: 35, name: "Comedy" }, { id: 80, name: "Crime" }, { id: 18, name: "Drama" },
+    { id: 10751, name: "Family" }, { id: 14, name: "Fantasy" }, { id: 27, name: "Horror" },
+    { id: 9648, name: "Mystery" }, { id: 10749, name: "Romance" }, { id: 878, name: "Science Fiction" },
+    { id: 53, name: "Thriller" },
+  ],
+  movies: [
+    { id: "demo-1", title: "The Godfather", year: "1972", rating: 8.7, runtime: 175, genres: [80, 18],
+      overview: "The aging head of a New York crime dynasty hands his empire to a reluctant son, and the family business slowly consumes him." },
+    { id: "demo-2", title: "Spirited Away", year: "2001", rating: 8.5, runtime: 125, genres: [16, 14, 10751],
+      overview: "A girl who wanders into a world of spirits must work in a bathhouse for gods to free her parents and find a way home." },
+    { id: "demo-3", title: "Spider-Man: Into the Spider-Verse", year: "2018", rating: 8.4, runtime: 117, genres: [16, 28, 12, 878],
+      overview: "Teenager Miles Morales becomes Spider-Man and meets heroes from other dimensions who share his mask." },
+    { id: "demo-4", title: "Mad Max: Fury Road", year: "2015", rating: 7.6, runtime: 120, genres: [28, 12, 878],
+      overview: "In a desert wasteland, a drifter and a rebel driver flee a tyrant warlord in one long, roaring chase." },
+    { id: "demo-5", title: "Paddington 2", year: "2017", rating: 7.5, runtime: 104, genres: [35, 10751, 12],
+      overview: "A polite bear is wrongly jailed for theft and wins over the whole prison while his family hunts for the real thief." },
+    { id: "demo-6", title: "The Dark Knight", year: "2008", rating: 8.5, runtime: 152, genres: [28, 80, 18, 53],
+      overview: "Batman, Gordon and Harvey Dent take on Gotham's mobsters, but the Joker has a very different plan for the city." },
+    { id: "demo-7", title: "Alien", year: "1979", rating: 8.0, runtime: 117, genres: [27, 878],
+      overview: "The crew of a deep-space cargo ship answers a distress call and brings something deadly aboard." },
+    { id: "demo-8", title: "Parasite", year: "2019", rating: 8.5, runtime: 133, genres: [35, 53, 18],
+      overview: "A struggling family schemes its way into the lives of a wealthy household, with consequences nobody planned for." },
+    { id: "demo-9", title: "Knives Out", year: "2019", rating: 7.8, runtime: 130, genres: [9648, 35, 80],
+      overview: "A famous novelist dies after his birthday party, and a detective sorts through a family full of motives." },
+    { id: "demo-10", title: "La La Land", year: "2016", rating: 7.9, runtime: 128, genres: [10749, 18, 35],
+      overview: "A jazz pianist and an aspiring actress fall in love in Los Angeles while chasing their dreams." },
+    { id: "demo-11", title: "Get Out", year: "2017", rating: 7.6, runtime: 104, genres: [27, 9648, 53],
+      overview: "A young photographer visits his girlfriend's family for a weekend and slowly realizes something is deeply wrong." },
+    { id: "demo-12", title: "The Princess Bride", year: "1987", rating: 7.8, runtime: 98, genres: [14, 12, 10751, 10749],
+      overview: "A farmhand turned pirate sets out to rescue his true love, meeting giants, swordsmen and schemers along the way." },
+  ],
+};
